@@ -122,7 +122,7 @@
     {
         "id": "01642fa426a25687",
         "type": "tab",
-        "label": "Exercise1.2",
+        "label": "Exercise1.3",
         "disabled": false,
         "info": "",
         "env": []
@@ -131,6 +131,14 @@
         "id": "361465aa5a5f3196",
         "type": "tab",
         "label": "Dashboard button",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3f1a3723fe89963e",
+        "type": "tab",
+        "label": "MODBUS",
         "disabled": false,
         "info": "",
         "env": []
@@ -299,6 +307,33 @@
         "useselfsignedcertificate": false,
         "sslterminated": false,
         "verboselogging": false
+    },
+    {
+        "id": "26bb2fed0493a394",
+        "type": "modbus-client",
+        "name": "Factoryio",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "192.168.1.111",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true
     },
     {
         "id": "57be1211125b6ef4",
@@ -8602,6 +8637,530 @@
                 "ebe64cdd1684d1b7",
                 "fe6842b475888e32",
                 "b739226628e992c7"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "391b03f773bc077d",
+        "type": "modbus-read",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "InputRegister",
+        "adr": "0",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "26bb2fed0493a394",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 290,
+        "y": 200,
+        "wires": [
+            [
+                "776302ef8245bcb0",
+                "6752d68451b562bc"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c51bd0cff990e98e",
+        "type": "debug",
+        "z": "3f1a3723fe89963e",
+        "name": "Msg.payload",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "1f64fc353667457e",
+        "type": "ui_gauge",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "group": "5023a979a0ed49e9",
+        "order": 14,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Tank Level",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "600",
+        "seg2": "800",
+        "className": "",
+        "x": 750,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "776302ef8245bcb0",
+        "type": "function",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "func": "msg.payload= msg.payload/10.0;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 180,
+        "wires": [
+            [
+                "c51bd0cff990e98e",
+                "1f64fc353667457e"
+            ]
+        ]
+    },
+    {
+        "id": "e5e0282c1820533e",
+        "type": "modbus-write",
+        "z": "3f1a3723fe89963e",
+        "name": "Filling Valve",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "0",
+        "quantity": "1",
+        "server": "26bb2fed0493a394",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 510,
+        "y": 340,
+        "wires": [
+            [
+                "4c03f58c2d7957a3"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "808b594fcb69f07d",
+        "type": "inject",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "500",
+        "payloadType": "num",
+        "x": 290,
+        "y": 320,
+        "wires": [
+            [
+                "e5e0282c1820533e"
+            ]
+        ]
+    },
+    {
+        "id": "4c03f58c2d7957a3",
+        "type": "debug",
+        "z": "3f1a3723fe89963e",
+        "name": "Msg.payload",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "7e535c31cd8cd4a0",
+        "type": "inject",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 290.8958435058594,
+        "y": 404.8888854980469,
+        "wires": [
+            [
+                "e5e0282c1820533e"
+            ]
+        ]
+    },
+    {
+        "id": "ee5d2051cc93e354",
+        "type": "ui_slider",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "label": "Filling Valve",
+        "tooltip": "",
+        "group": "5023a979a0ed49e9",
+        "order": 15,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "10",
+        "step": "1",
+        "className": "",
+        "x": 210,
+        "y": 260,
+        "wires": [
+            [
+                "9b7f12881f7c1ebb"
+            ]
+        ]
+    },
+    {
+        "id": "9b7f12881f7c1ebb",
+        "type": "function",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "func": "msg.payload= msg.payload*100.0;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "e5e0282c1820533e"
+            ]
+        ]
+    },
+    {
+        "id": "89578b981cfb9e04",
+        "type": "function",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "func": "msg.payload= msg.payload*100.0;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 500,
+        "wires": [
+            [
+                "001421dbb4069185"
+            ]
+        ]
+    },
+    {
+        "id": "c538ef37d2675a9b",
+        "type": "ui_slider",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "label": "Draining Valve",
+        "tooltip": "",
+        "group": "5023a979a0ed49e9",
+        "order": 15,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "10",
+        "step": "1",
+        "className": "",
+        "x": 180,
+        "y": 500,
+        "wires": [
+            [
+                "89578b981cfb9e04"
+            ]
+        ]
+    },
+    {
+        "id": "001421dbb4069185",
+        "type": "modbus-write",
+        "z": "3f1a3723fe89963e",
+        "name": "Draining  Valve",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "1",
+        "quantity": "1",
+        "server": "26bb2fed0493a394",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 560,
+        "y": 480,
+        "wires": [
+            [
+                "68f8ea2c3a1e9948"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "68f8ea2c3a1e9948",
+        "type": "debug",
+        "z": "3f1a3723fe89963e",
+        "name": "Msg.payload",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "7d6316452abd0f2e",
+        "type": "telegram command",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "command": "/500",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "e40f81462a5253c9",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 90,
+        "y": 360,
+        "wires": [
+            [
+                "71a0b256b62ef753",
+                "f0aaa54a41973271"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "df3ddaa1ca70cc63",
+        "type": "telegram sender",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "bot": "e40f81462a5253c9",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 750,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5bfe729515756b3b",
+        "type": "function",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "func": "var content = msg.payload;\nmsg.payload = {\n    \"chatId\": 1090216360,\n    \"type\": \"message\",\n    \"content\":\"Tank level: \" + content\n\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 40,
+        "wires": [
+            [
+                "66756525817adf26"
+            ]
+        ]
+    },
+    {
+        "id": "6752d68451b562bc",
+        "type": "function",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "func": "msg.payload= msg.payload/10.0;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 80,
+        "wires": [
+            [
+                "5bfe729515756b3b"
+            ]
+        ]
+    },
+    {
+        "id": "66756525817adf26",
+        "type": "delay",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "20",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 700,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "71a0b256b62ef753",
+        "type": "function",
+        "z": "3f1a3723fe89963e",
+        "name": "function 5",
+        "func": "var content = \"on progress\"\nmsg.payload = {\n    \"chatId\": 1090216360,\n    \"type\": \"message\",\n    \"content\": content\n\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 580,
+        "wires": [
+            [
+                "f136afbd4b7d7d10"
+            ]
+        ]
+    },
+    {
+        "id": "f136afbd4b7d7d10",
+        "type": "telegram sender",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "bot": "e40f81462a5253c9",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 410,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f0aaa54a41973271",
+        "type": "function",
+        "z": "3f1a3723fe89963e",
+        "name": "function 6",
+        "func": "msg.payload=500;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 360,
+        "wires": [
+            [
+                "e5e0282c1820533e"
+            ]
+        ]
+    },
+    {
+        "id": "623c733da2194fe3",
+        "type": "function",
+        "z": "3f1a3723fe89963e",
+        "name": "function 7",
+        "func": "msg.payload=800;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 440,
+        "wires": [
+            [
+                "001421dbb4069185"
+            ]
+        ]
+    },
+    {
+        "id": "7ceda5036c98faf3",
+        "type": "telegram command",
+        "z": "3f1a3723fe89963e",
+        "name": "",
+        "command": "/800",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "e40f81462a5253c9",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 272.8958435058594,
+        "y": 451.22222900390625,
+        "wires": [
+            [
+                "623c733da2194fe3",
+                "71a0b256b62ef753"
             ],
             []
         ]
