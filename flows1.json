@@ -139,17 +139,24 @@
         "id": "3f1a3723fe89963e",
         "type": "tab",
         "label": "MODBUS",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
     {
-        "id": "6a1903b017e49b2e",
-        "type": "ui_tab",
-        "name": "Code and Compile Dashboard",
-        "icon": "dashboard",
+        "id": "691ce7ad2febcc51",
+        "type": "tab",
+        "label": "Project 1",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b67aa2323d7d12cb",
+        "type": "tab",
+        "label": "Modbus Tank Level",
         "disabled": false,
-        "hidden": false
+        "info": ""
     },
     {
         "id": "d66803f6ae37a8b9",
@@ -251,21 +258,10 @@
         }
     },
     {
-        "id": "5023a979a0ed49e9",
-        "type": "ui_group",
-        "name": "Input",
-        "tab": "6a1903b017e49b2e",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "21e2699ae592f8ad",
         "type": "ui_group",
         "name": "Output",
-        "tab": "6a1903b017e49b2e",
+        "tab": "",
         "order": 2,
         "disp": true,
         "width": "6",
@@ -276,7 +272,7 @@
         "id": "0229b62be8a0a1b6",
         "type": "ui_group",
         "name": "Settings",
-        "tab": "6a1903b017e49b2e",
+        "tab": "",
         "order": 3,
         "disp": true,
         "width": "6",
@@ -334,6 +330,83 @@
         "reconnectOnTimeout": true,
         "reconnectTimeout": "2000",
         "parallelUnitIdsAllowed": true
+    },
+    {
+        "id": "7ef9fc6d.479354",
+        "type": "modbus-client",
+        "name": "FACTORYIO",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "tcpHost": "192.168.0.70",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true
+    },
+    {
+        "id": "9db036fb.8da578",
+        "type": "ui_group",
+        "name": "Tank Level",
+        "tab": "64f1c68907dc6b85",
+        "order": 3,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "eef44c3f.b1bed",
+        "type": "ui_group",
+        "name": "Inputs",
+        "tab": "64f1c68907dc6b85",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8655756b.5450f8",
+        "type": "ui_group",
+        "name": "Data Analysis",
+        "tab": "64f1c68907dc6b85",
+        "order": 4,
+        "disp": true,
+        "width": "11",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "38ddfad7.fc4dd6",
+        "type": "ui_group",
+        "name": "Outputs",
+        "tab": "64f1c68907dc6b85",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "64f1c68907dc6b85",
+        "type": "ui_tab",
+        "name": "Tank Level Control",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "57be1211125b6ef4",
@@ -7013,7 +7086,7 @@
         "type": "ui_button",
         "z": "361465aa5a5f3196",
         "name": "",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -7061,7 +7134,7 @@
         "type": "ui_button",
         "z": "361465aa5a5f3196",
         "name": "",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -7244,7 +7317,7 @@
         "name": "",
         "label": "Switch",
         "tooltip": "",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -7315,7 +7388,7 @@
         "label": "",
         "tooltip": "",
         "place": "Select option",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 3,
         "width": 0,
         "height": 0,
@@ -7374,7 +7447,7 @@
         "name": "",
         "label": "slider",
         "tooltip": "",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 4,
         "width": 0,
         "height": 0,
@@ -7418,7 +7491,7 @@
         "name": "",
         "label": "Numeric",
         "tooltip": "",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 5,
         "width": 0,
         "height": 0,
@@ -7463,7 +7536,7 @@
         "name": "",
         "label": "Text Input",
         "tooltip": "",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 6,
         "width": 0,
         "height": 0,
@@ -7522,7 +7595,7 @@
         "z": "361465aa5a5f3196",
         "name": "",
         "label": "Date",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 7,
         "width": 0,
         "height": 0,
@@ -7544,7 +7617,7 @@
         "z": "361465aa5a5f3196",
         "name": "",
         "label": "",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "format": "hex",
         "outformat": "string",
         "showSwatch": true,
@@ -7576,7 +7649,7 @@
         "z": "361465aa5a5f3196",
         "name": "",
         "label": "Down Time Report",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 9,
         "width": 0,
         "height": 0,
@@ -7811,7 +7884,7 @@
         "type": "ui_chart",
         "z": "361465aa5a5f3196",
         "name": "",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 10,
         "width": 0,
         "height": 0,
@@ -7962,7 +8035,7 @@
         "type": "ui_chart",
         "z": "361465aa5a5f3196",
         "name": "",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 11,
         "width": 0,
         "height": 0,
@@ -8006,7 +8079,7 @@
         "type": "ui_chart",
         "z": "361465aa5a5f3196",
         "name": "",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 11,
         "width": 0,
         "height": 0,
@@ -8050,7 +8123,7 @@
         "type": "ui_chart",
         "z": "361465aa5a5f3196",
         "name": "",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 13,
         "width": 0,
         "height": 0,
@@ -8695,7 +8768,7 @@
         "type": "ui_gauge",
         "z": "3f1a3723fe89963e",
         "name": "",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 14,
         "width": 0,
         "height": 0,
@@ -8842,7 +8915,7 @@
         "name": "",
         "label": "Filling Valve",
         "tooltip": "",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 15,
         "width": 0,
         "height": 0,
@@ -8907,7 +8980,7 @@
         "name": "",
         "label": "Draining Valve",
         "tooltip": "",
-        "group": "5023a979a0ed49e9",
+        "group": "",
         "order": 15,
         "width": 0,
         "height": 0,
@@ -9163,6 +9236,2042 @@
                 "71a0b256b62ef753"
             ],
             []
+        ]
+    },
+    {
+        "id": "3c8a361f87b0b22e",
+        "type": "comment",
+        "z": "691ce7ad2febcc51",
+        "name": "Reading Level ",
+        "info": "",
+        "x": 110,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ffd07318a33538a5",
+        "type": "modbus-read",
+        "z": "691ce7ad2febcc51",
+        "name": "Reading Level",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "InputRegister",
+        "adr": "0",
+        "quantity": "1",
+        "rate": "300",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "26bb2fed0493a394",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "8a312503c6e19a92"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8a312503c6e19a92",
+        "type": "function",
+        "z": "691ce7ad2febcc51",
+        "name": "Set Global Level ",
+        "func": "msg.payload=msg.payload/10.0; \nglobal.set(\"level\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 80,
+        "wires": [
+            [
+                "37664f6f133bd8a2"
+            ]
+        ]
+    },
+    {
+        "id": "37664f6f133bd8a2",
+        "type": "debug",
+        "z": "691ce7ad2febcc51",
+        "name": "msg.payload",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "7592962e130af042",
+        "type": "comment",
+        "z": "691ce7ad2febcc51",
+        "name": "Writing Parameters",
+        "info": "",
+        "x": 150,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "9d09b9c8b39fcbea",
+        "type": "ui_slider",
+        "z": "691ce7ad2febcc51",
+        "name": "",
+        "label": "Set Point(10 - 90%)",
+        "tooltip": "",
+        "group": "eef44c3f.b1bed",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "10",
+        "max": "90",
+        "step": 1,
+        "className": "",
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "40e418efa7caaaa0"
+            ]
+        ]
+    },
+    {
+        "id": "40e418efa7caaaa0",
+        "type": "function",
+        "z": "691ce7ad2febcc51",
+        "name": "Set Global Level ",
+        "func": "global.set(\"setpoint\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "860c2a8a6ba31c9b",
+        "type": "ui_slider",
+        "z": "691ce7ad2febcc51",
+        "name": "",
+        "label": "Proportional Gain(0 - 40)",
+        "tooltip": "",
+        "group": "eef44c3f.b1bed",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "0",
+        "max": "40",
+        "step": "0.1",
+        "className": "",
+        "x": 170,
+        "y": 340,
+        "wires": [
+            [
+                "87e0c1f10900fc99"
+            ]
+        ]
+    },
+    {
+        "id": "87e0c1f10900fc99",
+        "type": "function",
+        "z": "691ce7ad2febcc51",
+        "name": "Set Kp",
+        "func": "global.set(\"Kp\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "97fdec0696132731",
+        "type": "function",
+        "z": "691ce7ad2febcc51",
+        "name": "Set Ki",
+        "func": "global.set(\"Ki\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0b5249ec8d34f1b3",
+        "type": "inject",
+        "z": "691ce7ad2febcc51",
+        "name": "Reset",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 480,
+        "wires": [
+            [
+                "4c9a7ca6fd9a4ea5"
+            ]
+        ]
+    },
+    {
+        "id": "4c9a7ca6fd9a4ea5",
+        "type": "function",
+        "z": "691ce7ad2febcc51",
+        "name": "Reset Old Integral and internal Output",
+        "func": "global.set(\"oldintegral\",0)\nglobal.set(\"intoutput\",0)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c376e232291e2be",
+        "type": "ui_button",
+        "z": "691ce7ad2febcc51",
+        "name": "",
+        "group": "eef44c3f.b1bed",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reset Integral",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 520,
+        "wires": [
+            [
+                "4c9a7ca6fd9a4ea5"
+            ]
+        ]
+    },
+    {
+        "id": "bbbda38990d1ee52",
+        "type": "comment",
+        "z": "691ce7ad2febcc51",
+        "name": "PID Logic ",
+        "info": "",
+        "x": 120,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "676a9024e074351e",
+        "type": "inject",
+        "z": "691ce7ad2febcc51",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 700,
+        "wires": [
+            [
+                "463e63987754993d",
+                "0c444a4e9932c19f",
+                "ff7c5ce2cc0c9bae"
+            ]
+        ]
+    },
+    {
+        "id": "463e63987754993d",
+        "type": "function",
+        "z": "691ce7ad2febcc51",
+        "name": "PID Logic",
+        "func": "var setpoint= global.get(\"setpoint\") || 0; \nvar level= global.get(\"level\") || 0; \nvar filling = global.get(\"filling\") || 0;\nvar kp= global.get(\"kp\") || 0; \nvar ki= global.get(\"Ki\") ||0; \nvar oldintegral = global.get(\"oldintegral\") || 0; \nvar intoutput= global.get(\"intoutput\") || 0; \n\n//Error\nvar error = setpoint - level; \nglobal.set(\"error\",error); \n\n//IntegralOutput \nintoutput = intoutput + error;// sum of errors \nglobal.set(\"intoutput\", intoutput); \nvar intoutput = global.get(\"intoutput\") || 0; \n\n//PID \nvar pid = (kp*error) + (ki*intoutput); \nglobal.set(\"filling\",pid); \n\nif(pid>100){\n    global.set(\"intoutput\",oldintegral); \n    global.set(\"filling\",100);\n}\n\nif(pid<0){\n    global.set(\"intoutput\", oldintegral);\n    global.set(\"filling\",0);\n\n}\nglobal.set(\"oldintegral\",intoutput);\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6f5f596375cab043",
+        "type": "ui_numeric",
+        "z": "691ce7ad2febcc51",
+        "name": "",
+        "label": "Integral Gain(0 - 0.1)",
+        "tooltip": "",
+        "group": "eef44c3f.b1bed",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "0.1",
+        "step": "0.01",
+        "className": "",
+        "x": 160,
+        "y": 400,
+        "wires": [
+            [
+                "97fdec0696132731"
+            ]
+        ]
+    },
+    {
+        "id": "3440049ce9fed590",
+        "type": "ui_text",
+        "z": "691ce7ad2febcc51",
+        "group": "eef44c3f.b1bed",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Error",
+        "format": "{{msg.payload | Number:2 }}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 530,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "8bd3395b4d99311e",
+        "type": "ui_text",
+        "z": "691ce7ad2febcc51",
+        "group": "eef44c3f.b1bed",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Integral Sum",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 550,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "8319ad6705560b1b",
+        "type": "ui_chart",
+        "z": "691ce7ad2febcc51",
+        "name": "",
+        "group": "8655756b.5450f8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Error",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-100",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 530,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ff7c5ce2cc0c9bae",
+        "type": "function",
+        "z": "691ce7ad2febcc51",
+        "name": "Error",
+        "func": "msg.payload= global.get(\"error\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 740,
+        "wires": [
+            [
+                "3440049ce9fed590",
+                "8319ad6705560b1b"
+            ]
+        ]
+    },
+    {
+        "id": "0c444a4e9932c19f",
+        "type": "function",
+        "z": "691ce7ad2febcc51",
+        "name": "Intoutput",
+        "func": "msg.payload= global.get(\"intoutput\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 800,
+        "wires": [
+            [
+                "8bd3395b4d99311e"
+            ]
+        ]
+    },
+    {
+        "id": "c411c12bbb6928a5",
+        "type": "comment",
+        "z": "691ce7ad2febcc51",
+        "name": "Chart Values",
+        "info": "",
+        "x": 141.8958282470703,
+        "y": 887.7777709960938,
+        "wires": []
+    },
+    {
+        "id": "0f8d6db6b880160e",
+        "type": "inject",
+        "z": "691ce7ad2febcc51",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 940,
+        "wires": [
+            [
+                "cf5f2564d9c965d4"
+            ]
+        ]
+    },
+    {
+        "id": "cf5f2564d9c965d4",
+        "type": "function",
+        "z": "691ce7ad2febcc51",
+        "name": "Chart Values",
+        "func": "var msg1={}; \nvar msg2={}; \nmsg1.payload=global.get(\"setpoint\"); \nmsg1.topic= \"setpoint\"; \nmsg2.payload=global.get(\"level\");\nmsg2.topic=\"level\";\nreturn [msg1,msg2];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 940,
+        "wires": [
+            [
+                "b5166b90f3b802b1"
+            ],
+            [
+                "b5166b90f3b802b1"
+            ]
+        ]
+    },
+    {
+        "id": "b5166b90f3b802b1",
+        "type": "ui_chart",
+        "z": "691ce7ad2febcc51",
+        "name": "",
+        "group": "8655756b.5450f8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Set Point Vs. Level",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 630,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b45460988066c80e",
+        "type": "inject",
+        "z": "691ce7ad2febcc51",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 350,
+        "y": 1040,
+        "wires": [
+            [
+                "b5166b90f3b802b1",
+                "8319ad6705560b1b"
+            ]
+        ]
+    },
+    {
+        "id": "a503c25a2db787a8",
+        "type": "comment",
+        "z": "691ce7ad2febcc51",
+        "name": "Writing Filling",
+        "info": "",
+        "x": 130,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "2887e3e7d721cf6d",
+        "type": "inject",
+        "z": "691ce7ad2febcc51",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 1180,
+        "wires": [
+            [
+                "10893af0dd9e88cf"
+            ]
+        ]
+    },
+    {
+        "id": "10893af0dd9e88cf",
+        "type": "function",
+        "z": "691ce7ad2febcc51",
+        "name": "Writing Filling Level",
+        "func": "msg.payload= global.get(\"filling\")*10;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 1180,
+        "wires": [
+            [
+                "ce5ded1672aab715"
+            ]
+        ]
+    },
+    {
+        "id": "ce5ded1672aab715",
+        "type": "modbus-write",
+        "z": "691ce7ad2febcc51",
+        "name": "Filling Valve",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "0",
+        "quantity": "1",
+        "server": "7ef9fc6d.479354",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 610,
+        "y": 1180,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b5a693fb61e74cbb",
+        "type": "comment",
+        "z": "691ce7ad2febcc51",
+        "name": "Writing Draining",
+        "info": "",
+        "x": 143.8958282470703,
+        "y": 1301,
+        "wires": []
+    },
+    {
+        "id": "80176ba5aa341f15",
+        "type": "function",
+        "z": "691ce7ad2febcc51",
+        "name": "Gain of 10",
+        "func": "global.set(\"draining\",msg.payload); \nmsg.paylaod = msg.paylaod *10; \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1360,
+        "wires": [
+            [
+                "50bb329587b1f651"
+            ]
+        ]
+    },
+    {
+        "id": "36596761caaa8d5f",
+        "type": "ui_slider",
+        "z": "691ce7ad2febcc51",
+        "name": "",
+        "label": "Manual Draining(10 - 100%)",
+        "tooltip": "",
+        "group": "eef44c3f.b1bed",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "10",
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 160,
+        "y": 1360,
+        "wires": [
+            [
+                "80176ba5aa341f15"
+            ]
+        ]
+    },
+    {
+        "id": "50bb329587b1f651",
+        "type": "modbus-write",
+        "z": "691ce7ad2febcc51",
+        "name": "Draining Valve",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "1",
+        "quantity": "1",
+        "server": "7ef9fc6d.479354",
+        "emptyMsgOnFail": true,
+        "keepMsgProperties": false,
+        "x": 640,
+        "y": 1360,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "02bc42f49b1e163e",
+        "type": "comment",
+        "z": "691ce7ad2febcc51",
+        "name": "Reading Filling and Draining",
+        "info": "",
+        "x": 180,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "9e989a894fd3f44c",
+        "type": "inject",
+        "z": "691ce7ad2febcc51",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 1520,
+        "wires": [
+            [
+                "6e064b41d44c1e69",
+                "4e9e86a379367f4a"
+            ]
+        ]
+    },
+    {
+        "id": "6e064b41d44c1e69",
+        "type": "function",
+        "z": "691ce7ad2febcc51",
+        "name": "Filling",
+        "func": "msg.payload= global.get(\"filling\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 405.8958435058594,
+        "y": 1519.666748046875,
+        "wires": [
+            [
+                "4d37bd0a7cecdf43"
+            ]
+        ]
+    },
+    {
+        "id": "4e9e86a379367f4a",
+        "type": "function",
+        "z": "691ce7ad2febcc51",
+        "name": "Draining",
+        "func": "msg.payload= global.get(\"draining\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 424.8958435058594,
+        "y": 1576.666748046875,
+        "wires": [
+            [
+                "375a38a8a144cd36"
+            ]
+        ]
+    },
+    {
+        "id": "4d37bd0a7cecdf43",
+        "type": "ui_gauge",
+        "z": "691ce7ad2febcc51",
+        "name": "",
+        "group": "38ddfad7.fc4dd6",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Filling Valve",
+        "label": "%",
+        "format": "{{value| Number:2}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 630,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "375a38a8a144cd36",
+        "type": "ui_gauge",
+        "z": "691ce7ad2febcc51",
+        "name": "",
+        "group": "38ddfad7.fc4dd6",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Draining Valve",
+        "label": "%",
+        "format": "{{value | Number:2}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 620,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "cc03c40624d2d46c",
+        "type": "modbus-read",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "InputRegister",
+        "adr": "0",
+        "quantity": "1",
+        "rate": "300",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "26bb2fed0493a394",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 133,
+        "y": 95,
+        "wires": [
+            [
+                "ba0b844336e27a79"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7dab3d8311a8774f",
+        "type": "debug",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 553,
+        "y": 89,
+        "wires": []
+    },
+    {
+        "id": "ba0b844336e27a79",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "Set Global level",
+        "func": "msg.payload = msg.payload/10;\nglobal.set('level', msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 336,
+        "y": 89,
+        "wires": [
+            [
+                "7dab3d8311a8774f",
+                "d8a36d24829d909f",
+                "5fb9c321e628356a"
+            ]
+        ]
+    },
+    {
+        "id": "d8a36d24829d909f",
+        "type": "ui_gauge",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "group": "9db036fb.8da578",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 532,
+        "y": 129,
+        "wires": []
+    },
+    {
+        "id": "6ace5cf6a1128b8a",
+        "type": "modbus-write",
+        "z": "b67aa2323d7d12cb",
+        "name": "Filling valve",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "0",
+        "quantity": "1",
+        "server": "26bb2fed0493a394",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 613,
+        "y": 854,
+        "wires": [
+            [
+                "31d24f7db1907875"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "31d24f7db1907875",
+        "type": "debug",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 824,
+        "y": 847,
+        "wires": []
+    },
+    {
+        "id": "0a7b8e5c9507c993",
+        "type": "modbus-write",
+        "z": "b67aa2323d7d12cb",
+        "name": "Draining valve",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "1",
+        "quantity": "1",
+        "server": "26bb2fed0493a394",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 617,
+        "y": 989,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "58ba3ea5099a0967",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "PID Logic",
+        "func": "var setpoint = global.get('setpoint') || 0;\nvar filling = global.get('filling') || 0;\nvar level = global.get('level') || 0;\nvar kp = global.get('kp') || 0;\nvar ki = global.get('ki') || 0;\nvar oldintegral = global.get('oldintegral') || 0;\nvar intoutput = global.get('intoutput') || 0;\n\n//Error\nvar error = setpoint - level;\nglobal.set('error', error);\n\n\n//IntegralOutput\nintoutput= intoutput + error;\nglobal.set('intoutput',intoutput);\nvar intoutput = global.get('intoutput')||0;\n\n//PID Output = (Proportional Gain x error ) + (Integral Gain x Integral output)\nvar pid = (kp* error) + (ki*intoutput);\nglobal.set('filling', pid);\n\n\nif (pid >100)\n{\n    global.set('intoutput',oldintegral);\n    global.set('filling', 100);\n}\n\nif (pid < 0)\n{\n    global.set('intoutput',oldintegral);\n    global.set('filling', 0);\n}\n\n\nglobal.set('oldintegral',intoutput);\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 347,
+        "y": 507,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ecd6a7eee70c25d9",
+        "type": "inject",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "repeat": "0.3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 507,
+        "wires": [
+            [
+                "58ba3ea5099a0967",
+                "806fb00d62059a31",
+                "88da44b73eb77370"
+            ]
+        ]
+    },
+    {
+        "id": "8deab702658e5a32",
+        "type": "inject",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 126,
+        "y": 855,
+        "wires": [
+            [
+                "2bdfa503acce81f5"
+            ]
+        ]
+    },
+    {
+        "id": "2bdfa503acce81f5",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "Writing filling level",
+        "func": "msg.payload = global.get('filling') * 10;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 369,
+        "y": 854,
+        "wires": [
+            [
+                "6ace5cf6a1128b8a",
+                "e7e6c59cf181b8b3"
+            ]
+        ]
+    },
+    {
+        "id": "b86147744181da7b",
+        "type": "ui_slider",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "label": "Set Point (10 - 90%)",
+        "tooltip": "",
+        "group": "eef44c3f.b1bed",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "topicType": "str",
+        "min": "10",
+        "max": "90",
+        "step": 1,
+        "className": "",
+        "x": 142,
+        "y": 216,
+        "wires": [
+            [
+                "26d6511c499c4dcd"
+            ]
+        ]
+    },
+    {
+        "id": "26d6511c499c4dcd",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "Set Global level",
+        "func": "global.set('setpoint', msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 472,
+        "y": 216,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "438da6f7efb26bad",
+        "type": "ui_slider",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "label": "Proportional Gain ( 0 - 40)",
+        "tooltip": "",
+        "group": "eef44c3f.b1bed",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "topicType": "str",
+        "min": 0,
+        "max": "40",
+        "step": "0.1",
+        "className": "",
+        "x": 150,
+        "y": 265,
+        "wires": [
+            [
+                "cd24f063aa580615"
+            ]
+        ]
+    },
+    {
+        "id": "cd24f063aa580615",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "Set Kp",
+        "func": "global.set('kp', msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 417,
+        "y": 264,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7c939901c9c30295",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "Set Ki",
+        "func": "global.set('ki', msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 413,
+        "y": 318,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "497fbf524d4eb2c9",
+        "type": "inject",
+        "z": "b67aa2323d7d12cb",
+        "name": "Reset",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 116,
+        "y": 371,
+        "wires": [
+            [
+                "6dd5e098c8e2573b"
+            ]
+        ]
+    },
+    {
+        "id": "6dd5e098c8e2573b",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "Reset old integral and interal output",
+        "func": "global.set('oldintegral',0);\nglobal.set('intoutput',0);\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 372,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "699e109b6e686ba3",
+        "type": "ui_slider",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "label": "Manual Draining ( 10 - 100%)",
+        "tooltip": "",
+        "group": "eef44c3f.b1bed",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "topicType": "str",
+        "min": "10",
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 157,
+        "y": 987,
+        "wires": [
+            [
+                "7a833c8adc97e7d6"
+            ]
+        ]
+    },
+    {
+        "id": "1dff60888b445264",
+        "type": "ui_chart",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "group": "8655756b.5450f8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Set-point vs Level",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ff8040",
+            "#00ff00",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 580,
+        "y": 671,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b3db5dd46648d83b",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "Chart values",
+        "func": "msg1 = {};\nmsg2 = {};\n\nmsg1.payload = global.get('setpoint');\nmsg1.topic = 'Setpoint';\n\nmsg2.payload = global.get('level');\nmsg2.topic = 'Level'\n\nreturn [msg1, msg2];\n",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 368,
+        "y": 659,
+        "wires": [
+            [
+                "1dff60888b445264"
+            ],
+            [
+                "1dff60888b445264"
+            ]
+        ]
+    },
+    {
+        "id": "f633b5436f2e4267",
+        "type": "inject",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "x": 367,
+        "y": 702,
+        "wires": [
+            [
+                "1dff60888b445264",
+                "4ac5d1c05b6e87e2"
+            ]
+        ]
+    },
+    {
+        "id": "96f4713e4f265f81",
+        "type": "ui_numeric",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "label": "Integral gain ( 0 - 0.1)",
+        "tooltip": "",
+        "group": "eef44c3f.b1bed",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "0.1",
+        "step": "0.001",
+        "className": "",
+        "x": 143,
+        "y": 318,
+        "wires": [
+            [
+                "7c939901c9c30295"
+            ]
+        ]
+    },
+    {
+        "id": "7a833c8adc97e7d6",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "Gain of 10",
+        "func": "global.set('draining',msg.payload);\nmsg.payload = msg.payload * 10;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 424,
+        "y": 988,
+        "wires": [
+            [
+                "0a7b8e5c9507c993"
+            ]
+        ]
+    },
+    {
+        "id": "83a47c3f9033a60f",
+        "type": "comment",
+        "z": "b67aa2323d7d12cb",
+        "name": "Reading Level",
+        "info": "",
+        "x": 113,
+        "y": 48,
+        "wires": []
+    },
+    {
+        "id": "e1827caad1ab49eb",
+        "type": "comment",
+        "z": "b67aa2323d7d12cb",
+        "name": "Writing Filling ",
+        "info": "",
+        "x": 110,
+        "y": 799,
+        "wires": []
+    },
+    {
+        "id": "711f293253e86cd0",
+        "type": "comment",
+        "z": "b67aa2323d7d12cb",
+        "name": "Writing Draining",
+        "info": "",
+        "x": 110,
+        "y": 937,
+        "wires": []
+    },
+    {
+        "id": "19a55de2bc5843f6",
+        "type": "comment",
+        "z": "b67aa2323d7d12cb",
+        "name": "PID Logic",
+        "info": "",
+        "x": 103,
+        "y": 454,
+        "wires": []
+    },
+    {
+        "id": "3a297177856cb8e8",
+        "type": "comment",
+        "z": "b67aa2323d7d12cb",
+        "name": "Writing Parameters",
+        "info": "",
+        "x": 127,
+        "y": 178,
+        "wires": []
+    },
+    {
+        "id": "77124d175a8653f1",
+        "type": "inject",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 128,
+        "y": 660,
+        "wires": [
+            [
+                "b3db5dd46648d83b"
+            ]
+        ]
+    },
+    {
+        "id": "9b5ca8a390910f78",
+        "type": "comment",
+        "z": "b67aa2323d7d12cb",
+        "name": "Chart values",
+        "info": "",
+        "x": 99,
+        "y": 621,
+        "wires": []
+    },
+    {
+        "id": "9181831aa9511e3d",
+        "type": "comment",
+        "z": "b67aa2323d7d12cb",
+        "name": "Reading FIlling and Draining",
+        "info": "",
+        "x": 153,
+        "y": 1089,
+        "wires": []
+    },
+    {
+        "id": "ac26179cc2dcbd1a",
+        "type": "inject",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "repeat": "0.3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 128,
+        "y": 1139,
+        "wires": [
+            [
+                "2a244646744c099b",
+                "702cfc09a81b8c36"
+            ]
+        ]
+    },
+    {
+        "id": "2a244646744c099b",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "Filling",
+        "func": "msg.payload = global.get('filling');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 308,
+        "y": 1138,
+        "wires": [
+            [
+                "3535a226cf243327"
+            ]
+        ]
+    },
+    {
+        "id": "702cfc09a81b8c36",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "draining",
+        "func": "msg.payload = global.get('draining');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 315,
+        "y": 1189,
+        "wires": [
+            [
+                "77697cd42622b1eb"
+            ]
+        ]
+    },
+    {
+        "id": "3535a226cf243327",
+        "type": "ui_gauge",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "group": "38ddfad7.fc4dd6",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Filling Valve",
+        "label": "%",
+        "format": "{{value | number:2}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ffff80",
+            "#00ff00",
+            "#ff8040"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 498,
+        "y": 1136,
+        "wires": []
+    },
+    {
+        "id": "77697cd42622b1eb",
+        "type": "ui_gauge",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "group": "38ddfad7.fc4dd6",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Draining Valve",
+        "label": "%",
+        "format": "{{value | number:2}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ffff80",
+            "#00ff00",
+            "#ff8040"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 510,
+        "y": 1189,
+        "wires": []
+    },
+    {
+        "id": "f144885f13e2286a",
+        "type": "ui_text",
+        "z": "b67aa2323d7d12cb",
+        "group": "eef44c3f.b1bed",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Error",
+        "format": "{{msg.payload | number:2}} %",
+        "layout": "row-spread",
+        "className": "",
+        "x": 549,
+        "y": 553,
+        "wires": []
+    },
+    {
+        "id": "806fb00d62059a31",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "Error",
+        "func": "msg.payload = global.get('error');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 335,
+        "y": 554,
+        "wires": [
+            [
+                "f144885f13e2286a",
+                "4ac5d1c05b6e87e2"
+            ]
+        ]
+    },
+    {
+        "id": "e7e6c59cf181b8b3",
+        "type": "debug",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 605,
+        "y": 912,
+        "wires": []
+    },
+    {
+        "id": "277da14eecb51846",
+        "type": "ui_button",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "group": "eef44c3f.b1bed",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reset Integral",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "Orange",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 122,
+        "y": 410,
+        "wires": [
+            [
+                "6dd5e098c8e2573b"
+            ]
+        ]
+    },
+    {
+        "id": "b81bf242616dae74",
+        "type": "ui_text",
+        "z": "b67aa2323d7d12cb",
+        "group": "eef44c3f.b1bed",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Integral Sum",
+        "format": "{{msg.payload | number:2}} ",
+        "layout": "row-spread",
+        "className": "",
+        "x": 567,
+        "y": 596,
+        "wires": []
+    },
+    {
+        "id": "88da44b73eb77370",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "intoutput",
+        "func": "msg.payload = global.get('intoutput');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 352,
+        "y": 595,
+        "wires": [
+            [
+                "b81bf242616dae74"
+            ]
+        ]
+    },
+    {
+        "id": "4ac5d1c05b6e87e2",
+        "type": "ui_chart",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "group": "8655756b.5450f8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Error",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-100",
+        "ymax": "100",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ff0000",
+            "#00ff00",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 565,
+        "y": 505,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8b63ff7abd3a90d5",
+        "type": "telegram command",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "command": "/start@node-red",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "e40f81462a5253c9",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 780,
+        "y": 140,
+        "wires": [
+            [
+                "fc022f0c658c453a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c1ad06dbe6927f50",
+        "type": "telegram sender",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "bot": "e40f81462a5253c9",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1230,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fc022f0c658c453a",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "function 8",
+        "func": "var content = \"Hi I'm Julia, I'm here to help you control the tank level: pls set the desired setpoint \";\nmsg.payload = {\n    \"chatId\": 1090216360,\n    \"type\": \"message\",\n    \"content\": content\n\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 120,
+        "wires": [
+            [
+                "c1ad06dbe6927f50"
+            ]
+        ]
+    },
+    {
+        "id": "5d4eb9c838792572",
+        "type": "telegram command",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "command": "/80",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "e40f81462a5253c9",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 770,
+        "y": 200,
+        "wires": [
+            [
+                "1de70121bbafda56"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1de70121bbafda56",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "function 9",
+        "func": "msg.payload=80;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 180,
+        "wires": [
+            [
+                "26d6511c499c4dcd",
+                "7524218ff0351193"
+            ]
+        ]
+    },
+    {
+        "id": "a8d5175c68b222a5",
+        "type": "telegram command",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "command": "/50",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "e40f81462a5253c9",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 770,
+        "y": 260,
+        "wires": [
+            [
+                "346f286bf86dd624"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "346f286bf86dd624",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "function 10",
+        "func": "msg.payload=50;\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 240,
+        "wires": [
+            [
+                "26d6511c499c4dcd",
+                "7524218ff0351193"
+            ]
+        ]
+    },
+    {
+        "id": "0d16b99d15c5dc87",
+        "type": "telegram command",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "command": "/20",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "e40f81462a5253c9",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 770,
+        "y": 320,
+        "wires": [
+            [
+                "8778fde40eb8c6d9"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8778fde40eb8c6d9",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "function 11",
+        "func": "msg.payload=20;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 300,
+        "wires": [
+            [
+                "26d6511c499c4dcd",
+                "7524218ff0351193"
+            ]
+        ]
+    },
+    {
+        "id": "aea7873079db99f6",
+        "type": "telegram sender",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "bot": "e40f81462a5253c9",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 870,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5fb9c321e628356a",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "function 12",
+        "func": "var content = \"The Tank Leve is: \";\nvar limit= msg.payload;\nmsg.payload = {\n    \"chatId\": 1090216360,\n    \"type\": \"message\",\n    \"content\": content +limit+\" %\"\n\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 40,
+        "wires": [
+            [
+                "feaf17a29f5c32fe"
+            ]
+        ]
+    },
+    {
+        "id": "feaf17a29f5c32fe",
+        "type": "delay",
+        "z": "b67aa2323d7d12cb",
+        "name": "",
+        "pauseType": "queue",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1000",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 620,
+        "y": 40,
+        "wires": [
+            [
+                "aea7873079db99f6"
+            ]
+        ]
+    },
+    {
+        "id": "7524218ff0351193",
+        "type": "function",
+        "z": "b67aa2323d7d12cb",
+        "name": "function 13",
+        "func": "var content = \" on pogress\";\nmsg.payload = {\n    \"chatId\": 1090216360,\n    \"type\": \"message\",\n    \"content\": content\n\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1231.5078125,
+        "y": 184.5234375,
+        "wires": [
+            [
+                "c1ad06dbe6927f50"
+            ]
         ]
     }
 ]
